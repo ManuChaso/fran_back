@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
-const rateLimit = require('express-rate-limit')
+// const rateLimit = require('express-rate-limit')
 const connectDB = require('./src/config/db')
 const path = require('path')
 const fs = require('fs')
@@ -46,14 +46,14 @@ app.use(
   })
 )
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 500,
-  message: 'Demasiadas solicitudes, intenta de nuevo más tarde',
-  standardHeaders: true,
-  legacyHeaders: false
-})
-app.use('/api/', limiter)
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000,
+//   max: 500,
+//   message: 'Demasiadas solicitudes, intenta de nuevo más tarde',
+//   standardHeaders: true,
+//   legacyHeaders: false
+// })
+// app.use('/api/', limiter)
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
