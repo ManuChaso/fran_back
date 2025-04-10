@@ -146,7 +146,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
-const rateLimit = require('express-rate-limit')
+// const rateLimit = require('express-rate-limit')
 const connectDB = require('./src/config/db')
 const path = require('path')
 const fs = require('fs')
@@ -176,15 +176,15 @@ if (!fs.existsSync(uploadDir)) {
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
+// app.use(cookieParser())
 
 app.use(cors())
 
-app.use(
-  helmet({
-    crossOriginResourcePolicy: { policy: 'cross-origin' }
-  })
-)
+// app.use(
+//   helmet({
+//     crossOriginResourcePolicy: { policy: 'cross-origin' }
+//   })
+// )
 /*app.set('trust proxy', 1)*/
 
 /*const limiter = rateLimit({
