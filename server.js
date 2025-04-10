@@ -163,7 +163,7 @@ const mensajesPrivadosRoutes = require('./src/routes/mensajesPrivadosRoutes')
 
 const io = new Server(server, {
   cors: {
-    origin: /*'https://proyecto13fronted.vercel.app'*/ 'http://localhost:5173',
+    origin: /*'https://proyecto13fronted.vercel.app'*/ 'https://fran-back.onrender.com',
     methods: ['GET', 'POST'],
     credentials: true
   }
